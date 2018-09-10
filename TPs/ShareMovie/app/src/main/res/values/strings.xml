@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ShareMovie</string>
+    <string name="aPropos">A PROPOS DU FILM</string>
+    <string name="title">Titre</string>
+    <string name="originalTitle">Titre Original</string>
+    <string name="description">Description</string>
+    <string name="keyWords">Mot clés</string>
+
+    <string name="imitationTitle">Imitation Game</string>
+    <string name="imitationOriginalTitle">The Imitation Game</string>
+    <string name="imitationDescription">1940 : Alan Turing, mathématicien, cryptologue, est chargé par le gouvernement Britannique de percer le secret de la célèbre machine de cryptage allemande Enigma, réputée inviolable.</string>
+    <string name="imitationKeyWord">XOXOXOXO</string>
+
+    <string name="shareBtn">Partager</string>
+    <string name="commentBtn">Commenter</string>
+    <string name="likeBtn">J\'aime</string>
+
+    <string name="commentsList">Liste des Commentaires</string>
+    <string name="hintComment">Say something &#8230;</string>
+</resources>

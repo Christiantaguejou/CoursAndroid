@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="world">Monde</string>
+    <string name="app_name">Bonjour Monde</string>
+    <string name="toast">Pain grillé</string>
+    <string name="log">Trace de fonctionnement</string>
+    <string name="customToast">Pain grillé personnalisé</string>
+    <string name="vibrattion">"Rrrrrr"</string>
+</resources>

@@ -17,4 +17,7 @@
 
     <string name="commentsList">Liste des Commentaires</string>
     <string name="hintComment">Say something &#8230;</string>
+
+    <string name="backTitle">Back Title</string>
+    <string name="pageTitle">PAGE TITLE</string>
 </resources>

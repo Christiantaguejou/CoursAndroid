@@ -35,11 +35,13 @@
             android:weightSum="100">
 
             <TextView
+                android:id="@+id/title"
                 android:layout_weight="50"
                 style="@style/thirdTitle"
                 android:text="@string/title"/>
 
             <TextView
+                android:id="@+id/movieTitle"
                 android:layout_weight="50"
                 style="@style/text"
                 android:text="@string/imitationTitle"/>
@@ -50,11 +52,13 @@
             android:weightSum="100">
 
             <TextView
+                android:id="@+id/originalTitle"
                 style="@style/thirdTitle"
                 android:layout_weight="50"
                 android:text="@string/originalTitle"/>
 
             <TextView
+                android:id="@+id/movieOriginalTitle"
                 style="@style/text"
                 android:layout_weight="50"
                 android:text="@string/imitationOriginalTitle"/>
@@ -65,11 +69,13 @@
             android:weightSum="100">
 
             <TextView
+                android:id="@+id/description"
                 android:layout_weight="50"
                 style="@style/thirdTitle"
                 android:text="@string/description" />
 
             <TextView
+                android:id="@+id/movieDescription"
                 android:layout_weight="50"
                 style="@style/text"
                 android:text="@string/imitationDescription"/>
@@ -80,17 +86,20 @@
             android:weightSum="100">
 
             <TextView
+                android:id="@+id/keyWords"
                 style="@style/thirdTitle"
                 android:layout_weight="50"
                 android:text="@string/keyWords" android:layout_width="0dp" />
 
             <TextView
+                android:id="@+id/movieKeyWords"
                 style="@style/text"
                 android:layout_weight="50"
                 android:text="@string/imitationKeyWord"/>
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/interactLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorMenuBackground"
@@ -104,12 +113,14 @@
                 android:background="@drawable/rounded_button">
 
                 <ImageView
+                    android:id="@+id/iconShare"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:src="@drawable/ic_share_black_24dp" />
 
                 <TextView
+                    android:id="@+id/textShare"
                     style="@style/text"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"
@@ -123,6 +134,7 @@
                 android:background="@drawable/rounded_button">
 
                 <ImageView
+                    android:id="@+id/iconComment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -130,6 +142,7 @@
                     android:maxHeight="2dp"/>
 
                 <TextView
+                    android:id="@+id/textComment"
                     style="@style/text"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"
@@ -143,12 +156,14 @@
                 android:background="@drawable/rounded_button">
 
                 <ImageView
+                    android:id="@+id/iconLike"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:src="@drawable/ic_thumb_up_black_24dp" />
 
                 <TextView
+                    android:id="@+id/textLike"
                     style="@style/text"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"
@@ -159,6 +174,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/commentList"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:gravity="center"
@@ -188,6 +204,7 @@
             android:textColorHint="@color/colorText"/>
 
         <ImageView
+            android:id="@+id/iconSend"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="20"

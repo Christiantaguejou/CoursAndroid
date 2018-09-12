@@ -162,7 +162,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:src="@drawable/ic_thumb_up_black_24dp" />
+                    android:src="@drawable/ic_thumb_up_white_24dp" />
 
                 <TextView
                     android:id="@+id/textLike"
@@ -196,7 +196,9 @@
         android:layout_height="wrap_content"
         android:background="@color/colorMenuBackground"
         android:weightSum="100"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
 
         <EditText
             android:layout_width="0dp"

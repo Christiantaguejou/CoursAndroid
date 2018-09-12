@@ -5,7 +5,9 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,8 +24,16 @@ public class MainActivity extends AppCompatActivity {
 
     View.OnClickListener onClickLike = new View.OnClickListener(){
         public void onClick(View v){
-            Drawable roundedButton = v.getBackground();
-            roundedButton.setColorFilter(getResources().getColor(R.color.colorLikeClick), PorterDuff.Mode.SRC_OVER);
+        Drawable roundedButton = v.getBackground();
+        roundedButton.setColorFilter(getResources().getColor(R.color.colorLikeClick), PorterDuff.Mode.SRC_OVER);
+
+        LinearLayout linearLayout = (LinearLayout) v;
+
+        ImageView imageView = (ImageView) linearLayout.getChildAt(0);
+        imageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_thumb_up_yellow_24dp));
+
+        TextView textView = (TextView) linearLayout.getChildAt(1);
+        textView.setTextColor(getResources().getColor(R.color.colorButton));
         }
     };
 

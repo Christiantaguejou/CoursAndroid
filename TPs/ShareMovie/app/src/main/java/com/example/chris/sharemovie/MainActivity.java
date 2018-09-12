@@ -24,16 +24,27 @@ public class MainActivity extends AppCompatActivity {
 
     View.OnClickListener onClickLike = new View.OnClickListener(){
         public void onClick(View v){
-        Drawable roundedButton = v.getBackground();
-        roundedButton.setColorFilter(getResources().getColor(R.color.colorLikeClick), PorterDuff.Mode.SRC_OVER);
 
         LinearLayout linearLayout = (LinearLayout) v;
-
-        ImageView imageView = (ImageView) linearLayout.getChildAt(0);
-        imageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_thumb_up_yellow_24dp));
-
         TextView textView = (TextView) linearLayout.getChildAt(1);
-        textView.setTextColor(getResources().getColor(R.color.colorButton));
+
+        if(textView.getCurrentTextColor() == getResources().getColor(R.color.colorText)) {
+            textView.setTextColor(getResources().getColor(R.color.colorButton));
+            ImageView imageView = (ImageView) linearLayout.getChildAt(0);
+            imageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_thumb_up_yellow_24dp));
+
+            Drawable roundedButton = v.getBackground();
+            roundedButton.setColorFilter(getResources().getColor(R.color.colorLikeClick), PorterDuff.Mode.SRC_OVER);
+        }
+        else {
+            textView.setTextColor(getResources().getColor(R.color.colorText));
+            ImageView imageView = (ImageView) linearLayout.getChildAt(0);
+            imageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_thumb_up_white_24dp));
+
+            Drawable roundedButton = v.getBackground();
+            roundedButton.setColorFilter(getResources().getColor(R.color.colorButton), PorterDuff.Mode.SRC_OVER);
+        }
+
         }
     };
 

@@ -175,16 +175,25 @@
 
         </LinearLayout>
 
-        <TextView
+        <LinearLayout
             android:id="@+id/commentList"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:gravity="center"
-            android:background="@color/colorBackgroungComments"
-            android:textColor="@color/colorText"
-            android:text="@string/commentsList"
-            android:textStyle="bold"
-            android:textSize="20dp"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="50dp">
+
+            <TextView
+                android:id="@+id/defaultComment"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:gravity="center"
+                android:background="@color/colorBackgroungComments"
+                android:textColor="@color/colorText"
+                android:text="@string/defaultComment"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -15,7 +15,7 @@
     <string name="commentBtn">Commenter</string>
     <string name="likeBtn">J\'aime</string>
 
-    <string name="commentsList">Liste des Commentaires</string>
+    <string name="defaultComment">Liste des Commentaires</string>
     <string name="hintComment">Say something &#8230;</string>
 
     <string name="backTitle">Back Title</string>

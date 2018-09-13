@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout commentsList;
     EditText editTextComment;
     ImageView iconSend;
+    ImageView iconBack;
+    ImageView iconClose;
+    TextView backTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,16 @@ public class MainActivity extends AppCompatActivity {
         editTextComment = findViewById(R.id.editTextComment);
 
         commentsList = findViewById(R.id.commentList);
+
+        iconBack = findViewById(R.id.iconBack);
+        iconBack.setOnClickListener(onClickClose);
+
+        backTitle = findViewById(R.id.backTitle);
+        backTitle.setOnClickListener(onClickClose);
+
+        iconClose = findViewById(R.id.iconClose);
+        iconClose.setOnClickListener(onClickClose);
+
     }
 
     View.OnClickListener onClickLike = new View.OnClickListener(){
@@ -108,6 +122,13 @@ public class MainActivity extends AppCompatActivity {
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(editTextComment.getWindowToken(), 0);
         }
+        }
+    };
+
+    View.OnClickListener onClickClose = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            MainActivity.this.finish();
         }
     };
 }

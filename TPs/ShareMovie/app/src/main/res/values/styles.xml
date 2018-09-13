@@ -39,12 +39,6 @@
 
     <!-- Separator -->
 
-    <style name="separator">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">1dp</item>
-        <item name="android:background">@android:color/darker_gray</item>
-    </style>
-
     <!-- LinearLayout -->
     <style name="infoLinearLayout" parent="TextAppearance.AppCompat">
         <item name="android:layout_height">wrap_content</item>

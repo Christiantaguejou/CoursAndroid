@@ -12,6 +12,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView iconBack;
     ImageView iconClose;
     TextView backTitle;
+    ScrollView scrollBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
         iconClose = findViewById(R.id.iconClose);
         iconClose.setOnClickListener(onClickClose);
+
+        scrollBar = findViewById(R.id.scrollBar);
 
     }
 
@@ -92,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(editTextComment.getWindowToken(), 0);
             }
+            scrollBar.fullScroll(View.FOCUS_DOWN);
+
         }
     };
 
@@ -100,28 +106,31 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View view) {
         TextView defaultComment = findViewById(R.id.defaultComment);
 
-        if(!editTextComment.getText().toString().isEmpty()) {
-            commentsList.removeView(defaultComment);
+            if(!editTextComment.getText().toString().isEmpty()) {
+                commentsList.removeView(defaultComment);
 
-            LinearLayout.LayoutParams paramsTextView = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            paramsTextView.setMargins(30,10,10,10);
+                LinearLayout.LayoutParams paramsTextView = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                paramsTextView.setMargins(30,30,5,30);
 
-            TextView newComment = new TextView(MainActivity.this.getApplicationContext());
-            newComment.setText(editTextComment.getText().toString());
-            newComment.setLayoutParams(paramsTextView);
-            newComment.setTextAppearance(R.style.commentStyle);
+                TextView newComment = new TextView(MainActivity.this.getApplicationContext());
+                newComment.setText(editTextComment.getText().toString());
+                newComment.setLayoutParams(paramsTextView);
+                newComment.setTextAppearance(R.style.commentStyle);
 
-            View separator = new View(MainActivity.this.getApplicationContext(), null, R.style.separator);
-            LinearLayout.LayoutParams paramsView = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,1);
-            separator.setLayoutParams(paramsView);
+                View separator = new View(MainActivity.this.getApplicationContext());
+                separator.setBackgroundColor(getResources().getColor(R.color.colorBackgroungComments));
+                LinearLayout.LayoutParams paramsView = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,5);
+                separator.setLayoutParams(paramsView);
 
-            commentsList.addView(newComment);
-            commentsList.addView(separator);
-            editTextComment.getText().clear();
-            editTextComment.clearFocus();
-            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(editTextComment.getWindowToken(), 0);
-        }
+                commentsList.addView(newComment);
+                commentsList.addView(separator);
+                editTextComment.getText().clear();
+                editTextComment.clearFocus();
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(editTextComment.getWindowToken(), 0);
+
+                scrollBar.fullScroll(View.FOCUS_DOWN);
+            }
         }
     };
 

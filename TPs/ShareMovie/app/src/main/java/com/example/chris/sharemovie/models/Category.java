@@ -1,4 +1,4 @@
-package com.example.chris.sharemovie;
+package com.example.chris.sharemovie.models;
 
 public class Category {
 

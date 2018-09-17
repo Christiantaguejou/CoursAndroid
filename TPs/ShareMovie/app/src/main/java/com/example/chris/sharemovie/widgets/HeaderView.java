@@ -1,13 +1,13 @@
-package com.example.chris.sharemovie;
+package com.example.chris.sharemovie.widgets;
 
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.Nullable;
-import android.text.Layout;
 import android.util.AttributeSet;
-import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.chris.sharemovie.R;
 
 public class HeaderView extends LinearLayout {
 

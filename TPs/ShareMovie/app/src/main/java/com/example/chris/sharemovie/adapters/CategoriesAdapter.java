@@ -1,11 +1,14 @@
-package com.example.chris.sharemovie;
+package com.example.chris.sharemovie.adapters;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.chris.sharemovie.R;
+import com.example.chris.sharemovie.models.Category;
+import com.example.chris.sharemovie.viewHolders.CategoryViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;

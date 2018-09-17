@@ -1,9 +1,12 @@
-package com.example.chris.sharemovie;
+package com.example.chris.sharemovie.viewHolders;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.chris.sharemovie.models.Category;
+import com.example.chris.sharemovie.R;
 
 public class CategoryViewHolder extends RecyclerView.ViewHolder {
 

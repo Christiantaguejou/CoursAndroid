@@ -2,29 +2,41 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:background="@color/colorBackground"
+    android:padding="5dp">
 
     <ImageView
         android:id="@+id/user_image"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_person_white_48dp"/>
 
     <LinearLayout
-        android:id="@+id/user_comment"
+        android:id="@+id/comment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_toRightOf="@id/user_image">
 
     <TextView
+        android:id="@+id/pseudo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pseudo"/>
+        android:text="Pseudo"
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="5dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorText"/>
 
     <TextView
+        android:id="@+id/textComment"
+        style="@style/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Commentaire chris est bg"/>
+        android:text="Commentaire"
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="5dp"/>
 
     </LinearLayout>
 </RelativeLayout>

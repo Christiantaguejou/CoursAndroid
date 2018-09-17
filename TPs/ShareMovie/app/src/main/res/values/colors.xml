@@ -11,4 +11,5 @@
     <color name="colorThirdTitle">#dbdbdb</color>
     <color name="colorBackgroungComments">#c3c3c3</color>
     <color name="colorLikeClick">#0c7a00</color>
+    <color name="colorCircleImage">#c5c5c5</color>
 </resources>

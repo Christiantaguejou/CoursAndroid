@@ -145,7 +145,6 @@
                     android:maxHeight="2dp"/>
 
                 <TextView
-                    android:id="@+id/textComment"
                     style="@style/text"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"
@@ -194,6 +193,15 @@
                 android:textStyle="bold"
                 android:textSize="20sp"/>
 
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/comment_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:visibility="invisible">
+
+            </android.support.v7.widget.RecyclerView>
+
         </LinearLayout>
 
     </LinearLayout>
@@ -228,11 +236,12 @@
     </LinearLayout>
 
 
-    <com.example.chris.sharemovie.HeaderView
+    <com.example.chris.sharemovie.widgets.HeaderView
         android:layout_width="match_parent"
         android:layout_height="62dp"
         app:backTitle="@string/backTitle"
         app:mainTitle="@string/imitationTitle">
 
-    </com.example.chris.sharemovie.HeaderView>
+    </com.example.chris.sharemovie.widgets.HeaderView>
+
 </RelativeLayout>

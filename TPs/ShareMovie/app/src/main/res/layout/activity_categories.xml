@@ -7,14 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".CategoriesActivity">
 
-    <com.example.chris.sharemovie.HeaderView
+    <com.example.chris.sharemovie.widgets.HeaderView
         android:id="@+id/header_view"
         android:layout_width="match_parent"
         android:layout_height="62dp"
         app:backTitle="@string/backTitle"
         app:mainTitle="@string/category">
 
-    </com.example.chris.sharemovie.HeaderView>
+    </com.example.chris.sharemovie.widgets.HeaderView>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/category_recycler_view"

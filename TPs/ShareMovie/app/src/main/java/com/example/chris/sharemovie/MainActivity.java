@@ -7,6 +7,8 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
@@ -17,23 +19,34 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.chris.sharemovie.adapters.CommentsAdapter;
+import com.example.chris.sharemovie.models.Comment;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
-    LinearLayout iconLike;
-    LinearLayout iconComment;
-    LinearLayout commentsList;
-    EditText editTextComment;
-    ImageView iconSend;
-    ImageView iconBack;
-    ImageView iconClose;
-    TextView backTitle;
-    ScrollView scrollBar;
+    private LinearLayout iconLike;
+    private LinearLayout iconComment;
+    private LinearLayout commentsList;
+    private EditText editTextComment;
+    private ImageView iconSend;
+    private ImageView iconBack;
+    private ImageView iconClose;
+    private TextView backTitle;
+    private ScrollView scrollBar;
+    private RecyclerView recyclerView;
+    private List<Comment> comments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        this.comments = new ArrayList<>();
+
+        //icone
         iconLike = findViewById(R.id.btnLike);
         iconLike.setOnClickListener(onClickLike);
 
@@ -43,20 +56,23 @@ public class MainActivity extends AppCompatActivity {
         iconSend = findViewById(R.id.iconSend);
         iconSend.setOnClickListener(onClickSend);
 
-        editTextComment = findViewById(R.id.editTextComment);
-
-        commentsList = findViewById(R.id.commentList);
+        iconClose = findViewById(R.id.iconClose);
+        iconClose.setOnClickListener(onClickClose);
 
         iconBack = findViewById(R.id.iconBack);
         iconBack.setOnClickListener(onClickClose);
 
+        editTextComment = findViewById(R.id.editTextComment);
+
+        scrollBar = findViewById(R.id.scrollBar);
+
+        //header
         backTitle = findViewById(R.id.backTitle);
         backTitle.setOnClickListener(onClickClose);
 
-        iconClose = findViewById(R.id.iconClose);
-        iconClose.setOnClickListener(onClickClose);
-
-        scrollBar = findViewById(R.id.scrollBar);
+        //comments
+        commentsList = findViewById(R.id.commentList);
+        recyclerView = findViewById(R.id.comment_recycler_view);
 
     }
 
@@ -105,26 +121,13 @@ public class MainActivity extends AppCompatActivity {
     View.OnClickListener onClickSend = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-        TextView defaultComment = findViewById(R.id.defaultComment);
 
             if(!editTextComment.getText().toString().isEmpty()) {
-                commentsList.removeView(defaultComment);
 
                 LinearLayout.LayoutParams paramsTextView = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 paramsTextView.setMargins(30,30,5,30);
 
-                TextView newComment = new TextView(MainActivity.this.getApplicationContext());
-                newComment.setText(editTextComment.getText().toString());
-                newComment.setLayoutParams(paramsTextView);
-                newComment.setTextAppearance(R.style.commentStyle);
-
-                View separator = new View(MainActivity.this.getApplicationContext());
-                separator.setBackgroundColor(getResources().getColor(R.color.colorBackgroungComments));
-                LinearLayout.LayoutParams paramsView = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,5);
-                separator.setLayoutParams(paramsView);
-
-                commentsList.addView(newComment);
-                commentsList.addView(separator);
+                MainActivity.this.refreshComment(editTextComment.getText().toString());
                 editTextComment.getText().clear();
                 editTextComment.clearFocus();
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -134,6 +137,21 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
+
+    public void refreshComment(String comment) {
+        if(this.recyclerView.getVisibility() != View.VISIBLE) {
+            this.recyclerView.setVisibility(View.VISIBLE);
+        }
+
+        TextView defaultComment = findViewById(R.id.defaultComment);
+        commentsList.removeView(defaultComment);
+        this.comments.add(new Comment(comment));
+
+        CommentsAdapter commentsAdapter = new CommentsAdapter();
+        commentsAdapter.setComments(comments);
+        this.recyclerView.setAdapter(commentsAdapter);
+        this.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
 
     View.OnClickListener onClickClose = new View.OnClickListener() {
         @Override

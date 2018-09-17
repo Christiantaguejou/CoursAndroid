@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.example.chris.sharemovie.adapters.CategoriesAdapter;
+import com.example.chris.sharemovie.models.Category;
+
 import java.util.ArrayList;
 import java.util.List;
 

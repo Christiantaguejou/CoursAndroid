@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         iconSend.setOnClickListener(onClickSend);
 
         iconClose = findViewById(R.id.iconClose);
-        iconClose.setOnClickListener(onClickClose);
+        iconClose.setOnClickListener(onClickListeMovie);
 
         iconBack = findViewById(R.id.iconBack);
         iconBack.setOnClickListener(onClickClose);
@@ -161,4 +161,15 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
     };
+
+    View.OnClickListener onClickListeMovie = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+//            MainActivity.this.finish();
+            Intent intent = new Intent(MainActivity.this, MoviesActivity.class);
+            startActivity(intent);
+        }
+    };
+
+
 }

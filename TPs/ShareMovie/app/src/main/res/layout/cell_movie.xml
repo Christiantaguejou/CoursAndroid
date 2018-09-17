@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:background="@color/colorBackground">
+
+
+    <ImageView
+        android:id="@+id/movie_image"
+        android:layout_width="100dp"
+        android:layout_height="90dp"
+        android:src="@drawable/imitation_game"/>
+
+    <LinearLayout
+        android:id="@+id/info_film"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_toEndOf="@id/movie_image"
+        android:layout_marginStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="3dp">
+
+        <TextView
+            android:id="@+id/list_movie_title"
+            style="@style/text"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="imitiation"/>
+
+        <TextView
+            android:id="@+id/list_movie_description"
+            style="@style/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:layout_marginEnd="15dp"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_keyboard_arrow_right_white_24dp"/>
+
+
+</RelativeLayout>

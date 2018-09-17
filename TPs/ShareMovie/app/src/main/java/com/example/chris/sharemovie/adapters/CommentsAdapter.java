@@ -21,8 +21,8 @@ public class CommentsAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_comment, viewGroup, false);
-        CommentViewHolder ch = new CommentViewHolder(view);
-        return ch;
+        CommentViewHolder vh = new CommentViewHolder(view);
+        return vh;
     }
 
     @Override

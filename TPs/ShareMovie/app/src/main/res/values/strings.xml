@@ -18,6 +18,8 @@
     <string name="defaultComment">Liste des Commentaires</string>
     <string name="hintComment">Say something &#8230;</string>
 
-    <string name="backTitle">Back Title</string>
+    <string name="backTitle">Retour</string>
     <string name="pageTitle">PAGE TITLE</string>
+
+    <string name="category">Category</string>
 </resources>

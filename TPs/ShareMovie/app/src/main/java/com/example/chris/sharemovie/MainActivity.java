@@ -2,6 +2,7 @@ package com.example.chris.sharemovie;
 
 import android.app.ActionBar;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -137,7 +138,9 @@ public class MainActivity extends AppCompatActivity {
     View.OnClickListener onClickClose = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            MainActivity.this.finish();
+//            MainActivity.this.finish();
+            Intent intent = new Intent(MainActivity.this, CategoriesActivity.class);
+            startActivity(intent);
         }
     };
 }

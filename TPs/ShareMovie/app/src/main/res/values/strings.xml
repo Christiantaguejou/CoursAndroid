@@ -6,11 +6,6 @@
     <string name="description">Description</string>
     <string name="keyWords">Mot clés</string>
 
-    <string name="imitationTitle">Imitation Game</string>
-    <string name="imitationOriginalTitle">The Imitation Game</string>
-    <string name="imitationDescription">1940 : Alan Turing, mathématicien, cryptologue, est chargé par le gouvernement Britannique de percer le secret de la célèbre machine de cryptage allemande Enigma, réputée inviolable.</string>
-    <string name="imitationKeyWord">XOXOXOXO</string>
-
     <string name="shareBtn">Partager</string>
     <string name="commentBtn">Commenter</string>
     <string name="likeBtn">J\'aime</string>
@@ -22,4 +17,61 @@
     <string name="pageTitle">PAGE TITLE</string>
 
     <string name="category">Category</string>
+
+    <!--            Movies          -->
+    <string name="imitationTitle">Imitation Game</string>
+    <string name="imitationOriginalTitle">The Imitation Game</string>
+    <string name="imitationDescription">1940 : Alan Turing, mathématicien, cryptologue, est chargé par le gouvernement Britannique de percer le secret de la célèbre machine de cryptage allemande Enigma, réputée inviolable.</string>
+    <string name="imitationKeyWord">Historique, Guerre</string>
+
+    <string name="djangoTitle">Django Unchained</string>
+    <string name="djangoOriginalTitle">Django Unchained</string>
+    <string name="djangoDescription">Dans le sud des États-Unis, deux ans avant la guerre de Sécession, le Dr King Schultz, un chasseur de primes allemand, fait l’acquisition de Django, un esclave qui peut l’aider à traquer les frères Brittle, les meurtriers qu’il recherche. Schultz promet à Django de lui rendre sa liberté lorsqu’il aura capturé les Brittle – morts ou vifs.
+Alors que les deux hommes pistent les dangereux criminels, Django n’oublie pas que son seul but est de retrouver Broomhilda, sa femme, dont il fut séparé à cause du commerce des esclaves…</string>
+    <string name="djangoKeyword">Western, Tarantino</string>
+
+    <string name="furyTitle">Fury</string>
+    <string name="furyOriginalTitle">Fury</string>
+    <string name="furyDescription">Avril 1945. Les Alliés mènent leur ultime offensive en Europe. À bord d’un tank Sherman, le sergent Wardaddy et ses quatre hommes s’engagent dans une mission à très haut risque bien au-delà des lignes ennemies. Face à un adversaire dont le nombre et la puissance de feu les dépassent, Wardaddy et son équipage vont devoir tout tenter pour frapper l’Allemagne nazie en plein cœur…</string>
+    <string name="furyKeyword">Guerre, Drame, Action</string>
+
+    <string name="granTorinoTitle">Gran Torino</string>
+    <string name="granTorinoOriginalTitle">Gran Torino</string>
+    <string name="granTorinoDescription">Walt Kowalski est un ancien de la guerre de Corée, un homme inflexible, amer et pétri de préjugés surannés. Après des années de travail à la chaîne, il vit replié sur lui-même, occupant ses journées à bricoler, traînasser et siroter des bières. Avant de mourir, sa femme exprima le voeu qu\'il aille à confesse, mais Walt n'a rien à avouer, ni personne à qui parler. Hormis sa chienne Daisy, il ne fait confiance qu'à son M-1, toujours propre, toujours prêt à l'usage</string>
+    <string name="granTorinoKeyWord">Drame, Thriller</string>
+
+    <string name="huitSalopardsTitle">Les huit Salopards</string>
+    <string name="huitSalopardsOrignalTitle">The Hateful Eight</string>
+    <string name="huitSalopardsDescription">Quelques années après la Guerre de Sécession, le chasseur de primes John Ruth, dit Le Bourreau, fait route vers Red Rock, où il conduit sa prisonnière Daisy Domergue se faire pendre. Sur leur route, ils rencontrent le Major Marquis Warren, un ancien soldat lui aussi devenu chasseur de primes, et Chris Mannix, le nouveau shérif de Red Rock. </string>
+    <string name="huitSalopardsKeyword">Western, Tarantino</string>
+
+    <string name="inceptionTitle">Inception</string>
+    <string name="inceptionOrignalTitle">Inception</string>
+    <string name="inceptionDescription">Dom Cobb est un voleur expérimenté – le meilleur qui soit dans l’art périlleux de l’extraction : sa spécialité consiste à s’approprier les secrets les plus précieux d’un individu, enfouis au plus profond de son subconscient, pendant qu’il rêve et que son esprit est particulièrement vulnérable. Très recherché pour ses talents dans l’univers trouble de l’espionnage industriel, Cobb est aussi devenu un fugitif traqué dans le monde entier qui a perdu tout ce qui lui est cher</string>
+    <string name="inceptionKeyWord">Science-Fiction</string>
+
+    <string name="interstellarTitle">Interstellar</string>
+    <string name="interstellarOriginalTitle">Interstellar</string>
+    <string name="interstellarDescription">Le film raconte les aventures d’un groupe d’explorateurs qui utilisent une faille récemment découverte dans l’espace-temps afin de repousser les limites humaines et partir à la conquête des distances astronomiques dans un voyage interstellaire. </string>
+    <string name="interstellarKeyWord">Science-Fiction</string>
+
+    <string name="ipManTitle">Ip Man</string>
+    <string name="ipManOriginalTitle">Ip Man</string>
+    <string name="ipManDescription">Film biographique sur la vie de Ip Man, un maître de Kung-Fu spécialisé dans le style Wing Chun et qui fut le mâitre de Bruce Lee. Dans les années 30, Ip Man vit à Foshan dans le sud de la Chine, lors de l\'occupation japonaise. Face à ses indéniables talents en matière d'arts martiaux, les japonais lui demandent d'entraîner les soldats, ce qu'il refuse catégoriquement. Il va alors devoir lutter pour sa survie.</string>
+    <string name="ipManKeyWord">Action</string>
+
+    <string name="missionImpossibleTitle">Mission Impossible : Fallout</string>
+    <string name="missionImpossibleOriginalTitle">Mission Impossible: Fallout</string>
+    <string name="missionImpossibleDescription">Ethan Hunt et son équipe d\'agents de l\'organisation « Mission impossible », ainsi que le ministre et ancien chef de la CIA Alan Hunley et l\'agente britannique Ilsa Faust, reviennent une fois de plus dans une course contre la montre alors qu'ils doivent se battre pour sauver la planète du « Syndicat » et de son chef maléfique Solomon Lane.</string>
+    <string name="missionImpossibleKeyWord">Espionnage, Tom Cruise</string>
+    
+    <string name="pirateDesCaraibesTitle">Pirate des Caraïbes</string>
+    <string name="pirateDesCaraibesOriginalTitle">Pirates of the Caribbean</string>
+    <string name="pirateDesCaraibesDescription">Dans cette histoire pleine d’action, où vérité, trahison, jeunesse éternelle et mort forment un cocktail explosif, le capitaine Jack Sparrow retrouve une femme qu’il a connue autrefois. Leurs liens sont-ils faits d’amour ou cette femme n’est-elle qu’une aventurière sans scrupules qui cherche à l’utiliser pour découvrir la légendaire Fontaine de Jouvence ? Lorsqu’elle l’oblige à embarquer à bord du Queen Anne’s Revenge, le bateau du terrible pirate Barbe-Noire, Jack ne sait plus ce qu’il doit craindre le plus : le redoutable maître du bateau ou cette femme surgie de son passé</string>
+    <string name="pirateDesCaraibesKeyWord">Mythologie, Johnny Depp</string>
+
+    <string name="yourNameTitle">Your Name</string>
+    <string name="yourNameOriginalTitle">君の名は。, Kimi no na wa.</string>
+    <string name="yourNameDescription">Une étudiante du Japon rural et un étudiant de Tokyo rêvent chacun - sans se connaître - de la vie de l\'autre. Un matin ils se réveillent dans la peau de l'autre : autre sexe, autre famille, autre maison, autre paysage...</string>
+    <string name="yourNameKeyWord">Animation, Makoto Shinkai</string>
 </resources>

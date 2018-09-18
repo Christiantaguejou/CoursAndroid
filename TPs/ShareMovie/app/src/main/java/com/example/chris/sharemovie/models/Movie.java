@@ -6,11 +6,13 @@ import android.media.Image;
 public class Movie {
 
     private String title;
+    private String originalTitle;
     private String descrpition;
     private Drawable image;
     private Category category;
+    private String keyword;
 
-    public Movie(String title, String descrpition, Drawable image, Category category) {
+    public Movie(String title, String originalTitle, String descrpition, Drawable image, Category category, String keyword) {
         this.title = title;
         if(descrpition.length() > 80) {
             this.descrpition = descrpition.substring(0, 80);
@@ -20,6 +22,8 @@ public class Movie {
         }
         this.image = image;
         this.category = category;
+        this.originalTitle = originalTitle;
+        this.keyword = keyword;
     }
 
     public String getTitle() {
@@ -52,5 +56,21 @@ public class Movie {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public String getOriginalTitle() {
+        return originalTitle;
+    }
+
+    public void setOriginalTitle(String originalTitle) {
+        this.originalTitle = originalTitle;
+    }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
     }
 }

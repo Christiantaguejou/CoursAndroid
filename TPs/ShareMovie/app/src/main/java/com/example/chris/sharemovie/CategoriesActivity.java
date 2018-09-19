@@ -30,22 +30,22 @@ public class CategoriesActivity extends AppCompatActivity {
     public List<Category> setCategories(){
         List<Category> categories = new ArrayList<>();
 
-        categories.add(new Category("Action"));
-        categories.add(new Category("Aventure"));
-        categories.add(new Category("Animation"));
-        categories.add(new Category("Danse"));
-        categories.add(new Category("Dramatique"));
-        categories.add(new Category("Espionnage"));
-        categories.add(new Category("Fantastique"));
-        categories.add(new Category("Guerre"));
-        categories.add(new Category("Historique"));
-        categories.add(new Category("Horreur"));
-        categories.add(new Category("Humour"));
-        categories.add(new Category("Policier"));
-        categories.add(new Category("Politique"));
-        categories.add(new Category("Romantique"));
-        categories.add(new Category("Thriller"));
-        categories.add(new Category("Western"));
+        categories.add(Category.ACTION);
+        categories.add(Category.ANIMATION);
+        categories.add(Category.AVENTURE);
+        categories.add(Category.DANSE);
+        categories.add(Category.DRAMATIQUE);
+        categories.add(Category.ESPIONNAGE);
+        categories.add(Category.FANTASTIQUE);
+        categories.add(Category.GUERRE);
+        categories.add(Category.HISTORIQUE);
+        categories.add(Category.HORREUR);
+        categories.add(Category.HUMOUR);
+        categories.add(Category.POLICIER);
+        categories.add(Category.POLITIQUE);
+        categories.add(Category.ROMANTIQUE);
+        categories.add(Category.THRILLER);
+        categories.add(Category.WESTERN);
 
         this.refreshData();
         return categories;

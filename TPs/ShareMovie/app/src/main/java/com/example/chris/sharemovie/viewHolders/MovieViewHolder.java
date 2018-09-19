@@ -34,7 +34,7 @@ public class MovieViewHolder extends RecyclerView.ViewHolder {
             }
         }
         if(movie.getDescrpition() != null) {
-            if(titleTextView != null){
+            if(descriptionTextView != null){
                 descriptionTextView.setText(movie.getDescrpition());
             }
         }

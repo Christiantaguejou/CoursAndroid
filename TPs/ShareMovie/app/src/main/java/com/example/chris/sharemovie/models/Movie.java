@@ -2,8 +2,9 @@ package com.example.chris.sharemovie.models;
 
 import android.graphics.drawable.Drawable;
 import android.media.Image;
+import android.support.annotation.NonNull;
 
-public class Movie {
+public class Movie implements Comparable<Movie>  {
 
     private String title;
     private String originalTitle;
@@ -72,5 +73,10 @@ public class Movie {
 
     public void setKeyword(String keyword) {
         this.keyword = keyword;
+    }
+
+    @Override
+    public int compareTo(@NonNull Movie movie) {
+        return title.toLowerCase().compareTo(movie.title.toLowerCase());
     }
 }

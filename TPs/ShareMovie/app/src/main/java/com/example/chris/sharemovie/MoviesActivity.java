@@ -11,6 +11,7 @@ import com.example.chris.sharemovie.models.Category;
 import com.example.chris.sharemovie.models.Movie;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MoviesActivity extends AppCompatActivity {
@@ -36,78 +37,80 @@ public class MoviesActivity extends AppCompatActivity {
                 getApplicationContext().getString(R.string.imitationOriginalTitle),
                 getApplicationContext().getString(R.string.imitationDescription),
                 getApplicationContext().getDrawable(R.drawable.imitation_game),
-                new Category("Historique"),
+                Category.HISTORIQUE,
                 getApplicationContext().getString(R.string.imitationKeyWord)));
 
         movies.add(new Movie(getApplicationContext().getString(R.string.djangoTitle),
                 getApplicationContext().getString(R.string.djangoOriginalTitle),
                 getApplicationContext().getString(R.string.djangoDescription),
                 getApplicationContext().getDrawable(R.drawable.django_unchained),
-                new Category("Historique"),
+                Category.ACTION,
                 getApplicationContext().getString(R.string.djangoKeyword)));
 
         movies.add(new Movie(getApplicationContext().getString(R.string.furyTitle),
                 getApplicationContext().getString(R.string.furyOriginalTitle),
                 getApplicationContext().getString(R.string.furyDescription),
                 getApplicationContext().getDrawable(R.drawable.fury),
-                new Category("Historique"),
+                Category.GUERRE,
                 getApplicationContext().getString(R.string.furyKeyword)));
 
         movies.add(new Movie(getApplicationContext().getString(R.string.granTorinoTitle),
                 getApplicationContext().getString(R.string.granTorinoOriginalTitle),
                 getApplicationContext().getString(R.string.granTorinoDescription),
                 getApplicationContext().getDrawable(R.drawable.gran_torino),
-                new Category("Historique"),
+                Category.DRAMATIQUE,
                 getApplicationContext().getString(R.string.granTorinoKeyWord)));
 
         movies.add(new Movie(getApplicationContext().getString(R.string.huitSalopardsTitle),
                 getApplicationContext().getString(R.string.huitSalopardsOrignalTitle),
                 getApplicationContext().getString(R.string.huitSalopardsDescription),
                 getApplicationContext().getDrawable(R.drawable.huit_salopards),
-                new Category("Historique"),
+                Category.WESTERN,
                 getApplicationContext().getString(R.string.huitSalopardsKeyword)));
 
         movies.add(new Movie(getApplicationContext().getString(R.string.inceptionTitle),
                 getApplicationContext().getString(R.string.inceptionOrignalTitle),
                 getApplicationContext().getString(R.string.inceptionDescription),
                 getApplicationContext().getDrawable(R.drawable.inception),
-                new Category("Historique"),
+                Category.SCIENCE_FICTION,
                 getApplicationContext().getString(R.string.inceptionKeyWord)));
 
         movies.add(new Movie(getApplicationContext().getString(R.string.interstellarTitle),
                 getApplicationContext().getString(R.string.interstellarOriginalTitle),
                 getApplicationContext().getString(R.string.interstellarDescription),
                 getApplicationContext().getDrawable(R.drawable.interstellar),
-                new Category("Historique"),
+                Category.SCIENCE_FICTION,
                 getApplicationContext().getString(R.string.interstellarKeyWord)));
 
         movies.add(new Movie(getApplicationContext().getString(R.string.ipManTitle),
                 getApplicationContext().getString(R.string.ipManOriginalTitle),
                 getApplicationContext().getString(R.string.ipManDescription),
                 getApplicationContext().getDrawable(R.drawable.ip_man),
-                new Category("Historique"),
+                Category.ACTION,
                 getApplicationContext().getString(R.string.ipManKeyWord)));
 
         movies.add(new Movie(getApplicationContext().getString(R.string.missionImpossibleTitle),
                 getApplicationContext().getString(R.string.missionImpossibleOriginalTitle),
                 getApplicationContext().getString(R.string.missionImpossibleDescription),
                 getApplicationContext().getDrawable(R.drawable.mission_impossible),
-                new Category("Historique"),
+                Category.ESPIONNAGE,
                 getApplicationContext().getString(R.string.missionImpossibleKeyWord)));
 
         movies.add(new Movie(getApplicationContext().getString(R.string.pirateDesCaraibesTitle),
                 getApplicationContext().getString(R.string.pirateDesCaraibesOriginalTitle),
                 getApplicationContext().getString(R.string.pirateDesCaraibesDescription),
                 getApplicationContext().getDrawable(R.drawable.pirate_des_caraibes),
-                new Category("Historique"),
+                Category.AVENTURE,
                 getApplicationContext().getString(R.string.pirateDesCaraibesKeyWord)));
 
         movies.add(new Movie(getApplicationContext().getString(R.string.yourNameTitle),
                 getApplicationContext().getString(R.string.yourNameOriginalTitle),
                 getApplicationContext().getString(R.string.yourNameDescription),
                 getApplicationContext().getDrawable(R.drawable.your_name),
-                new Category("Historique"),
+                Category.ANIMATION,
                 getApplicationContext().getString(R.string.yourNameKeyWord)));
+
+        java.util.Collections.sort(movies);
 
         return movies;
     }

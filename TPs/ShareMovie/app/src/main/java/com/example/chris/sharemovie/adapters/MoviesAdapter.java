@@ -29,8 +29,13 @@ public class MoviesAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         Movie currentMovie = movies.get(i);
         if (viewHolder instanceof MovieViewHolder && currentMovie != null) {
-            MovieViewHolder movieViewHolder = (MovieViewHolder) viewHolder;
-            movieViewHolder.layoutForMovie(currentMovie);
+//            if(i > 0) {
+//
+//            }
+//            else {
+                MovieViewHolder movieViewHolder = (MovieViewHolder) viewHolder;
+                movieViewHolder.layoutForMovie(currentMovie);
+//            }
         }
     }
 

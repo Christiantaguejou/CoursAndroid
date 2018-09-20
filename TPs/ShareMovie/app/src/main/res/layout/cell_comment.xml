@@ -6,11 +6,20 @@
     android:background="@color/colorBackground"
     android:padding="5dp">
 
-    <ImageView
+    <!--<ImageView-->
+        <!--android:id="@+id/user_image"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/ic_person_white_48dp"/>-->
+
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/user_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_person_white_48dp"/>
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/comment_image"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/colorBackground"/>
 
     <LinearLayout
         android:id="@+id/comment"

@@ -1,10 +1,9 @@
 package com.example.chris.sharemovie.models;
 
 import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.support.annotation.NonNull;
 
-public class Movie implements Comparable<Movie>  {
+public class Movie extends ItemsMovieList implements Comparable<Movie>  {
 
     private String title;
     private String originalTitle;
@@ -12,6 +11,7 @@ public class Movie implements Comparable<Movie>  {
     private Drawable image;
     private Category category;
     private String keyword;
+    private int viewType = 1;
 
     public Movie(String title, String originalTitle, String descrpition, Drawable image, Category category, String keyword) {
         this.title = title;
@@ -25,6 +25,7 @@ public class Movie implements Comparable<Movie>  {
         this.category = category;
         this.originalTitle = originalTitle;
         this.keyword = keyword;
+        this.setViewType(viewType);
     }
 
     public String getTitle() {
@@ -73,6 +74,11 @@ public class Movie implements Comparable<Movie>  {
 
     public void setKeyword(String keyword) {
         this.keyword = keyword;
+    }
+
+    @Override
+    public void setViewType(int viewType) {
+        super.setViewType(viewType);
     }
 
     @Override

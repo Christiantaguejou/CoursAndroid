@@ -30,7 +30,7 @@ public class CategoriesAdapter extends RecyclerView.Adapter {
         Category currentCateg = categories.get(i);
         if (viewHolder instanceof CategoryViewHolder && currentCateg != null) {
             CategoryViewHolder categoryViewHolder = (CategoryViewHolder) viewHolder;
-            categoryViewHolder.layoutForCategory(currentCateg);
+            categoryViewHolder.layoutForObject(currentCateg);
         }
     }
 

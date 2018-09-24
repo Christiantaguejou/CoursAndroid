@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.example.chris.sharemovie.R;
 import com.example.chris.sharemovie.models.Comment;
 
-public class CommentViewHolder extends RecyclerView.ViewHolder{
+public class CommentViewHolder extends BaseViewHolder{
 
     private TextView pseudoTextView;
     private TextView commentTextView;
@@ -19,7 +19,11 @@ public class CommentViewHolder extends RecyclerView.ViewHolder{
         this.commentTextView = itemView.findViewById(R.id.textComment);
     }
 
-    public void layoutForComment (Comment comment) {
+    @Override
+    public void layoutForObject(Object object) {
+        super.layoutForObject(object);
+
+        Comment comment = (Comment) object;
         if(comment.getPseudo() != null) {
             if(pseudoTextView != null){
                 pseudoTextView.setText(comment.getPseudo());
@@ -31,5 +35,4 @@ public class CommentViewHolder extends RecyclerView.ViewHolder{
             }
         }
     }
-
 }

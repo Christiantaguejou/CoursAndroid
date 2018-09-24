@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.example.chris.sharemovie.R;
 import com.example.chris.sharemovie.models.Movie;
 
-public class MovieViewHolder extends RecyclerView.ViewHolder {
+public class MovieViewHolder extends BaseViewHolder{
 
     private ImageView imageView;
     private TextView titleTextView;
@@ -22,7 +22,11 @@ public class MovieViewHolder extends RecyclerView.ViewHolder {
         this.descriptionTextView = itemView.findViewById(R.id.list_movie_description);
     }
 
-    public void layoutForMovie (Movie movie) {
+    @Override
+    public void layoutForObject(Object object) {
+        super.layoutForObject(object);
+        Movie movie = (Movie) object;
+
         if(movie.getImage() != null) {
             if(imageView != null){
                 imageView.setImageDrawable(movie.getImage());
@@ -39,5 +43,4 @@ public class MovieViewHolder extends RecyclerView.ViewHolder {
             }
         }
     }
-
 }

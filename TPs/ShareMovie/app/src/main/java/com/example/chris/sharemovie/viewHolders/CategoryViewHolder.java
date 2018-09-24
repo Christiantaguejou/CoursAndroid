@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.example.chris.sharemovie.models.Category;
 import com.example.chris.sharemovie.R;
 
-public class CategoryViewHolder extends RecyclerView.ViewHolder {
+public class CategoryViewHolder extends BaseViewHolder {
 
     private TextView categoryNameTextView;
 
@@ -17,7 +17,11 @@ public class CategoryViewHolder extends RecyclerView.ViewHolder {
         this.categoryNameTextView = itemView.findViewById(R.id.categoryName);
     }
 
-    public void layoutForCategory (Category category) {
+    @Override
+    public void layoutForObject(Object object) {
+        super.layoutForObject(object);
+        Category category = (Category) object;
+
         if(category != null) {
             if (categoryNameTextView != null) {
                 categoryNameTextView.setText(category.getName());

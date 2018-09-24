@@ -30,7 +30,7 @@ public class CommentsAdapter extends RecyclerView.Adapter {
         Comment currentComment = comments.get(i);
         if (viewHolder instanceof CommentViewHolder && currentComment != null) {
             CommentViewHolder categoryViewHolder = (CommentViewHolder) viewHolder;
-            categoryViewHolder.layoutForComment(currentComment);
+            categoryViewHolder.layoutForObject(currentComment);
         }
     }
 

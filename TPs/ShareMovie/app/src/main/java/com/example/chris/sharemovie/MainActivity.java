@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 
 import com.example.chris.sharemovie.adapters.CommentsAdapter;
 import com.example.chris.sharemovie.models.Comment;
+import com.example.chris.sharemovie.models.MoviesManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,6 +78,21 @@ public class MainActivity extends AppCompatActivity {
         //comments
         commentsList = findViewById(R.id.commentList);
         recyclerView = findViewById(R.id.comment_recycler_view);
+        /*
+        findViewById(R.id.btnShare).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO share
+                Uri imageUri = Uri.parse("android.resource://" + getPackageName()
+                                + "/drawable/" + R.drawable.django_unchained);
+                Intent shareIntent = new Intent();
+                shareIntent.setAction(Intent.ACTION_SEND);
+                shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
+                shareIntent.setType("image/jpeg");
+                startActivity(Intent.createChooser(shareIntent, "Share to :"));
+            }
+        });
+        */
     }
 
     View.OnClickListener onClickLike = new View.OnClickListener(){

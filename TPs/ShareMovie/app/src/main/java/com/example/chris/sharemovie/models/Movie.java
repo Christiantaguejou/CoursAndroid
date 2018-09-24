@@ -9,13 +9,13 @@ public class Movie extends ItemsMovieList implements Comparable<Movie>  {
     private String title;
     private String originalTitle;
     private String descrpition;
-    private Drawable image;
+    private int image;
     private Category category;
     private String keyword;
     private int viewType = 1;
     private int id;
 
-    public Movie(String title, String originalTitle, String descrpition, Drawable image, Category category, String keyword) {
+    public Movie(String title, String originalTitle, String descrpition, int image, Category category, String keyword) {
         this.title = title;
         if(descrpition.length() > 80) {
             this.descrpition = descrpition.substring(0, 80);
@@ -57,11 +57,11 @@ public class Movie extends ItemsMovieList implements Comparable<Movie>  {
         this.descrpition = descrpition;
     }
 
-    public Drawable getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(Drawable image) {
+    public void setImage(int image) {
         this.image = image;
     }
 

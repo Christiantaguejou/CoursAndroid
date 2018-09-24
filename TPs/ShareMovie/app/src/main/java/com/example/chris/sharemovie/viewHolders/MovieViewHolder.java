@@ -1,25 +1,43 @@
 package com.example.chris.sharemovie.viewHolders;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.chris.sharemovie.MainActivity;
+import com.example.chris.sharemovie.MoviesActivity;
 import com.example.chris.sharemovie.R;
 import com.example.chris.sharemovie.models.Movie;
+import com.example.chris.sharemovie.models.MoviesManager;
 
 public class MovieViewHolder extends BaseViewHolder{
 
     private ImageView imageView;
     private TextView titleTextView;
     private TextView descriptionTextView;
+    private Context ctx;
+    private int movieId;
+    private RelativeLayout relativeLayout;
 
     public MovieViewHolder(@NonNull View itemView) {
         super(itemView);
         this.imageView = itemView.findViewById(R.id.movie_image);
         this.titleTextView = itemView.findViewById(R.id.list_movie_title);
         this.descriptionTextView = itemView.findViewById(R.id.list_movie_description);
+
+    }
+
+    public void setContext(Context ctx) {
+        this.ctx = ctx;
+    }
+
+    public void setMovieId(int movieId) {
+        this.movieId = movieId;
     }
 
     @Override
@@ -41,6 +59,18 @@ public class MovieViewHolder extends BaseViewHolder{
             if(descriptionTextView != null){
                 descriptionTextView.setText(movie.getDescrpition());
             }
+        }
+        if(descriptionTextView != null) {
+            RelativeLayout rel = descriptionTextView.findViewById(R.id.movieSelected);
+            if(rel != null) {
+                rel.setOnClickListener(v -> {
+                    Intent intent = new Intent(imageView.getContext(), MainActivity.class);
+                    intent.putExtra("movie", movie.getId());
+                    imageView.getContext().startActivity(intent);
+                });
+                System.out.println("It Works 2");
+            }
+            System.out.println("It Works");
         }
     }
 }

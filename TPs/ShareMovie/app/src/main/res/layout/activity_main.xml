@@ -20,7 +20,7 @@
 
 
         <ImageView
-            android:id="@+id/imitationGame"
+            android:id="@+id/moviePicture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
@@ -92,7 +92,8 @@
                 android:id="@+id/keyWords"
                 style="@style/thirdTitle"
                 android:layout_weight="30"
-                android:text="@string/keyWords" android:layout_width="0dp" />
+                android:text="@string/keyWords"
+                android:layout_width="0dp" />
 
             <TextView
                 android:id="@+id/movieKeyWords"

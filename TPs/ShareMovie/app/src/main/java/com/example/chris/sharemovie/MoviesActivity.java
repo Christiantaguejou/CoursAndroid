@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.example.chris.sharemovie.adapters.MoviesAdapter;
 import com.example.chris.sharemovie.models.Category;
@@ -22,7 +23,6 @@ import java.util.List;
 public class MoviesActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private int movieWithSameFirstLetter;
     private ImageView categoriesListView;
 
     @Override

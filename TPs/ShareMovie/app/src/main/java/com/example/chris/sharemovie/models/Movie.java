@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 
 public class Movie extends ItemsMovieList implements Comparable<Movie>  {
 
+    private static int countId = 0;
     private String title;
     private String originalTitle;
     private String descrpition;
@@ -12,6 +13,7 @@ public class Movie extends ItemsMovieList implements Comparable<Movie>  {
     private Category category;
     private String keyword;
     private int viewType = 1;
+    private int id;
 
     public Movie(String title, String originalTitle, String descrpition, Drawable image, Category category, String keyword) {
         this.title = title;
@@ -26,6 +28,17 @@ public class Movie extends ItemsMovieList implements Comparable<Movie>  {
         this.originalTitle = originalTitle;
         this.keyword = keyword;
         this.setViewType(viewType);
+        this.id = newId();
+    }
+
+    private static synchronized int newId() {
+        int id = countId;
+        countId++;
+        return id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getTitle() {
@@ -74,6 +87,10 @@ public class Movie extends ItemsMovieList implements Comparable<Movie>  {
 
     public void setKeyword(String keyword) {
         this.keyword = keyword;
+    }
+
+    public char getFirstLetter() {
+        return title.charAt(0);
     }
 
     @Override

@@ -51,18 +51,18 @@ public class MoviesAdapter extends RecyclerView.Adapter {
         ItemsMovieList currentItem = itemsMovieLists.get(i);
         if(currentItem != null) {
 
-            if (currentItem.getViewType() == MOVIE_VIEW) {
+            if (currentItem instanceof Movie) {
                 MovieViewHolder movieViewHolder = (MovieViewHolder) viewHolder;
-                movieViewHolder.layoutForMovie((Movie) currentItem);
+                movieViewHolder.layoutForObject( currentItem);
 
             }
-            else if (currentItem.getViewType() == LETTER_VIEW) {
+            else if (currentItem instanceof LetterSeparartor) {
                 LetterSeparatorViewHolder letterSeparatorViewHolder = (LetterSeparatorViewHolder) viewHolder;
-                letterSeparatorViewHolder.layoutForLetter((LetterSeparartor) currentItem);
+                letterSeparatorViewHolder.layoutForObject( currentItem);
             }
             else if (currentItem.getViewType() == NUMBER_FILM_VIEW) {
                 NumberMovieViewHolder numberMovieViewHolder = (NumberMovieViewHolder) viewHolder;
-                numberMovieViewHolder.layoutForLetter((NumberMovies) currentItem);
+                numberMovieViewHolder.layoutForObject( currentItem);
             }
         }
 

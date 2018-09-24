@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.example.chris.sharemovie.R;
 import com.example.chris.sharemovie.models.LetterSeparartor;
 
-public class LetterSeparatorViewHolder extends RecyclerView.ViewHolder {
+public class LetterSeparatorViewHolder extends BaseViewHolder {
 
     private TextView letterTextView;
 
@@ -17,7 +17,11 @@ public class LetterSeparatorViewHolder extends RecyclerView.ViewHolder {
         this.letterTextView = itemView.findViewById(R.id.letter_separator_TextView);
     }
 
-    public void layoutForLetter (LetterSeparartor letterSeparartor) {
+    @Override
+    public void layoutForObject(Object object) {
+        super.layoutForObject(object);
+        LetterSeparartor letterSeparartor = (LetterSeparartor) object;
+
         if(letterSeparartor.getLetter() != null) {
             if(letterTextView != null){
                 letterTextView.setText(letterSeparartor.getLetter().toString());

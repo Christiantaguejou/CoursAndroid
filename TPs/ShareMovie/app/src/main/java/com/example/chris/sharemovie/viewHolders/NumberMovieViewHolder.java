@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.example.chris.sharemovie.R;
 import com.example.chris.sharemovie.models.NumberMovies;
 
-public class NumberMovieViewHolder extends RecyclerView.ViewHolder {
+public class NumberMovieViewHolder extends BaseViewHolder {
 
     TextView numberFilmTextView;
 
@@ -17,7 +17,11 @@ public class NumberMovieViewHolder extends RecyclerView.ViewHolder {
         this.numberFilmTextView = itemView.findViewById(R.id.number_movies);
     }
 
-    public void layoutForLetter (NumberMovies numberMovies) {
+    @Override
+    public void layoutForObject(Object object) {
+        super.layoutForObject(object);
+        NumberMovies numberMovies = (NumberMovies) object;
+
         if(numberMovies.getNumberOfMovies() != 0) {
             if(numberFilmTextView != null){
                 numberFilmTextView.setText(numberMovies.toString());

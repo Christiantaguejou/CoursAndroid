@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout commentsList;
     private EditText editTextComment;
     private ImageView iconSend;
-    private ImageView iconBack;
+    private LinearLayout iconBack;
     private ImageView iconClose;
     private TextView backTitle;
     private ScrollView scrollBar;
@@ -45,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         this.comments = new ArrayList<>();
+        this.initId();
+    }
+
+    protected void initId() {
 
         //icone
         iconLike = findViewById(R.id.btnLike);
@@ -68,12 +72,10 @@ public class MainActivity extends AppCompatActivity {
 
         //header
         backTitle = findViewById(R.id.backTitle);
-        backTitle.setOnClickListener(onClickClose);
 
         //comments
         commentsList = findViewById(R.id.commentList);
         recyclerView = findViewById(R.id.comment_recycler_view);
-
     }
 
     View.OnClickListener onClickLike = new View.OnClickListener(){

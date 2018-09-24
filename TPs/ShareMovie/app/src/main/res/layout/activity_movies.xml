@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".MoviesActivity">
 
+
     <com.example.chris.sharemovie.widgets.HeaderView
         android:id="@+id/header_view"
         android:layout_width="match_parent"
@@ -16,6 +17,7 @@
 
     </com.example.chris.sharemovie.widgets.HeaderView>
 
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/movies_recycler_view"
         android:layout_width="match_parent"
@@ -23,5 +25,24 @@
         android:layout_below="@id/header_view">
 
     </android.support.v7.widget.RecyclerView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/category_list_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/circle"
+        android:src="@drawable/ic_format_list_bulleted_yellow_24dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="30dp"
+        android:padding="5dp"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>

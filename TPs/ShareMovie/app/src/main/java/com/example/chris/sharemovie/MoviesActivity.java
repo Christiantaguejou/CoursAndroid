@@ -1,9 +1,12 @@
 package com.example.chris.sharemovie;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.example.chris.sharemovie.adapters.MoviesAdapter;
 import com.example.chris.sharemovie.models.Category;
@@ -19,11 +22,15 @@ public class MoviesActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private int movieWithSameFirstLetter;
+    private ImageView categoriesListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movies);
+
+        categoriesListView = findViewById(R.id.category_list_btn);
+        categoriesListView.setOnClickListener(onClickCategories);
 
         this.recyclerView = findViewById(R.id.movies_recycler_view);
         MoviesAdapter moviesAdapter = new MoviesAdapter();
@@ -31,6 +38,11 @@ public class MoviesActivity extends AppCompatActivity {
         this.recyclerView.setAdapter(moviesAdapter);
         this.recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
+
+    View.OnClickListener onClickCategories = view -> {
+        Intent intent = new Intent(MoviesActivity.this, CategoriesActivity.class);
+        startActivity(intent);
+    };
 
     public List<ItemsMovieList> setMovies() {
         List<Movie> movies = new ArrayList<>();

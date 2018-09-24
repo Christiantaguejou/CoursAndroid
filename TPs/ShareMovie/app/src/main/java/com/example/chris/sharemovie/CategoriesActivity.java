@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import com.example.chris.sharemovie.adapters.CategoriesAdapter;
 import com.example.chris.sharemovie.models.Category;
@@ -14,18 +16,25 @@ import java.util.List;
 public class CategoriesActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
+    private LinearLayout backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories);
 
+        this.backBtn = findViewById(R.id.iconBack);
+        backBtn.setOnClickListener(onClickBack);
         this.recyclerView = findViewById(R.id.category_recycler_view);
         CategoriesAdapter categoriesAdapter = new CategoriesAdapter();
         categoriesAdapter.setCategories(setCategories());
         this.recyclerView.setAdapter(categoriesAdapter);
         this.recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
+
+    View.OnClickListener onClickBack = view -> {
+        finish();
+    };
 
     public List<Category> setCategories(){
         List<Category> categories = new ArrayList<>();

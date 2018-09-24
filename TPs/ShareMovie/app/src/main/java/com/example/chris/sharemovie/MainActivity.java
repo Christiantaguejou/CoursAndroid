@@ -24,6 +24,8 @@ import com.example.chris.sharemovie.adapters.CommentsAdapter;
 import com.example.chris.sharemovie.models.Comment;
 import com.example.chris.sharemovie.models.MoviesManager;
 
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -78,21 +80,22 @@ public class MainActivity extends AppCompatActivity {
         //comments
         commentsList = findViewById(R.id.commentList);
         recyclerView = findViewById(R.id.comment_recycler_view);
-        /*
-        findViewById(R.id.btnShare).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //TODO share
-                Uri imageUri = Uri.parse("android.resource://" + getPackageName()
-                                + "/drawable/" + R.drawable.django_unchained);
-                Intent shareIntent = new Intent();
-                shareIntent.setAction(Intent.ACTION_SEND);
-                shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
-                shareIntent.setType("image/jpeg");
-                startActivity(Intent.createChooser(shareIntent, "Share to :"));
-            }
+
+        findViewById(R.id.btnShare).setOnClickListener(v -> {
+            //TODO share
+            MoviesManager.getInstance().setContext(this.getApplicationContext());
+            MoviesManager.getInstance().setup();
+            Uri imageUri = Uri.parse("android.resource://" + getPackageName()
+                            + "/drawable/" + MoviesManager.getInstance().getMovie(0).getImage());
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("image/*");
+            shareIntent.putExtra(Intent.EXTRA_TEXT, MoviesManager.getInstance().getMovie(0).getTitle());
+            shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
+            shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            startActivity(Intent.createChooser(shareIntent, "Share to :"));
+            //Work with messages (Textra) but not with Messenger
         });
-        */
+
     }
 
     View.OnClickListener onClickLike = new View.OnClickListener(){

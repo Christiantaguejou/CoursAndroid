@@ -111,12 +111,13 @@
             android:weightSum="3">
 
             <LinearLayout
+                android:id="@+id/btnShare"
                 style="@style/iconeLinearLayout"
                 android:layout_weight="1"
                 android:background="@drawable/rounded_button">
 
                 <ImageView
-                    android:id="@+id/btnShare"
+                    android:id="@+id/iconShare"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"

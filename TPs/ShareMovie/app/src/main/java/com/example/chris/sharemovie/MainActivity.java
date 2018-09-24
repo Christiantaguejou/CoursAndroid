@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.example.chris.sharemovie.adapters.CommentsAdapter;
 import com.example.chris.sharemovie.models.Comment;
+import com.example.chris.sharemovie.models.Movie;
 import com.example.chris.sharemovie.models.MoviesManager;
 
 import java.util.ArrayList;
@@ -49,8 +50,29 @@ public class MainActivity extends AppCompatActivity {
 
         this.comments = new ArrayList<>();
         this.initId();
-
+        this.initActivity();
         
+    }
+
+    protected void initActivity() {
+        Intent intent = getIntent();
+        Movie movieReceived = MoviesManager.getInstance().getMovieById(intent.getIntExtra("movie",0));
+
+        ImageView moviePicture = findViewById(R.id.moviePicture);
+        moviePicture.setImageDrawable(getResources().getDrawable(movieReceived.getImage()));
+
+        TextView movieTitle = findViewById(R.id.movieTitle);
+        movieTitle.setText(movieReceived.getTitle());
+
+        TextView originalTitle = findViewById(R.id.movieOriginalTitle);
+        originalTitle.setText(movieReceived.getOriginalTitle());
+
+        TextView movieDescription = findViewById(R.id.movieDescription);
+        movieDescription.setText(movieReceived.getDescrpition());
+
+        TextView movieKeyWords = findViewById(R.id.movieKeyWords);
+        movieKeyWords.setText(movieReceived.getKeyword());
+
     }
 
     protected void initId() {

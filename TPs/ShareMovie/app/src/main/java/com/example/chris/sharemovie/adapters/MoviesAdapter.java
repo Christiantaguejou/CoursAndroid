@@ -31,6 +31,8 @@ public class MoviesAdapter extends RecyclerView.Adapter {
         if(i == MOVIE_VIEW) {
             View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cell_movie, viewGroup, false);
             MovieViewHolder vh = new MovieViewHolder(view);
+            vh.setContext(viewGroup.getContext());
+            vh.setMovieId(i);
             return vh;
         }
         else if (i == LETTER_VIEW) {

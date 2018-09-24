@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private ScrollView scrollBar;
     private RecyclerView recyclerView;
     private List<Comment> comments;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
         this.comments = new ArrayList<>();
         this.initId();
+
+        
     }
 
     protected void initId() {
@@ -78,27 +81,25 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.comment_recycler_view);
     }
 
-    View.OnClickListener onClickLike = new View.OnClickListener(){
-        public void onClick(View v){
-            LinearLayout linearLayout = (LinearLayout) v;
-            TextView textView = (TextView) linearLayout.getChildAt(1);
+    View.OnClickListener onClickLike = v -> {
+        LinearLayout linearLayout = (LinearLayout) v;
+        TextView textView = (TextView) linearLayout.getChildAt(1);
 
-            if(textView.getCurrentTextColor() == getResources().getColor(R.color.colorText)) {
-                textView.setTextColor(getResources().getColor(R.color.colorButton));
-                ImageView imageView = (ImageView) linearLayout.getChildAt(0);
-                imageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_thumb_up_yellow_24dp));
+        if(textView.getCurrentTextColor() == getResources().getColor(R.color.colorText)) {
+            textView.setTextColor(getResources().getColor(R.color.colorButton));
+            ImageView imageView = (ImageView) linearLayout.getChildAt(0);
+            imageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_thumb_up_yellow_24dp));
 
-                Drawable roundedButton = v.getBackground();
-                roundedButton.setColorFilter(getResources().getColor(R.color.colorLikeClick), PorterDuff.Mode.SRC_OVER);
-            }
-            else {
-                textView.setTextColor(getResources().getColor(R.color.colorText));
-                ImageView imageView = (ImageView) linearLayout.getChildAt(0);
-                imageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_thumb_up_white_24dp));
+            Drawable roundedButton = v.getBackground();
+            roundedButton.setColorFilter(getResources().getColor(R.color.colorLikeClick), PorterDuff.Mode.SRC_OVER);
+        }
+        else {
+            textView.setTextColor(getResources().getColor(R.color.colorText));
+            ImageView imageView = (ImageView) linearLayout.getChildAt(0);
+            imageView.setImageDrawable(getResources().getDrawable(R.drawable.ic_thumb_up_white_24dp));
 
-                Drawable roundedButton = v.getBackground();
-                roundedButton.setColorFilter(getResources().getColor(R.color.colorButton), PorterDuff.Mode.SRC_OVER);
-            }
+            Drawable roundedButton = v.getBackground();
+            roundedButton.setColorFilter(getResources().getColor(R.color.colorButton), PorterDuff.Mode.SRC_OVER);
         }
     };
 

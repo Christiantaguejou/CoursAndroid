@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.example.chris.sharemovie.adapters.MoviesAdapter;
 import com.example.chris.sharemovie.models.Category;
@@ -22,8 +23,8 @@ import java.util.List;
 public class MoviesActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private int movieWithSameFirstLetter;
     private ImageView categoriesListView;
+    private RelativeLayout movieSelected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +34,27 @@ public class MoviesActivity extends AppCompatActivity {
         categoriesListView = findViewById(R.id.category_list_btn);
         categoriesListView.setOnClickListener(onClickCategories);
 
+        movieSelected = findViewById(R.id.movie_selected);
+        movieSelected.setOnClickListener(onClickMovie);
+
         this.recyclerView = findViewById(R.id.movies_recycler_view);
         MoviesAdapter moviesAdapter = new MoviesAdapter();
         moviesAdapter.setItemsMovieLists(setMovies());
         this.recyclerView.setAdapter(moviesAdapter);
         this.recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
+
+    View.OnClickListener onClickMovie = view -> {
+        Intent intent = new Intent(MoviesActivity.this, MainActivity.class);
+        Movie movie = (Movie) MoviesManager.getInstance().getItemMovies().get(movieSelected.getId());
+
+        intent.putExtra("title", movie.getTitle());
+        intent.putExtra("originalTitle", movie.getOriginalTitle());
+        intent.putExtra("description", movie.getDescrpition());
+        intent.putExtra("keyWords", movie.getKeyword());
+
+        startActivity(intent);
+    };
 
     View.OnClickListener onClickCategories = view -> {
         Intent intent = new Intent(MoviesActivity.this, CategoriesActivity.class);

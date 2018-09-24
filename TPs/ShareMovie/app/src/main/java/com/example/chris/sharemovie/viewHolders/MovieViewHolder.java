@@ -27,9 +27,9 @@ public class MovieViewHolder extends BaseViewHolder{
         super.layoutForObject(object);
         Movie movie = (Movie) object;
 
-        if(movie.getImage() != null) {
+        if(movie.getImage() != 0) {
             if(imageView != null){
-                imageView.setImageDrawable(movie.getImage());
+                imageView.setImageDrawable(imageView.getContext().getDrawable(movie.getImage()));
             }
         }
         if(movie.getTitle() != null) {

@@ -59,77 +59,77 @@ public class MoviesManager {
         movies.add(new Movie(context.getString(R.string.imitationTitle),
                 context.getString(R.string.imitationOriginalTitle),
                 context.getString(R.string.imitationDescription),
-                context.getDrawable(R.drawable.imitation_game),
+                R.drawable.imitation_game,
                 Category.HISTORIQUE,
                 context.getString(R.string.imitationKeyWord)));
 
         movies.add(new Movie(context.getString(R.string.djangoTitle),
                 context.getString(R.string.djangoOriginalTitle),
                 context.getString(R.string.djangoDescription),
-                context.getDrawable(R.drawable.django_unchained),
+                (R.drawable.django_unchained),
                 Category.ACTION,
                 context.getString(R.string.djangoKeyword)));
 
         movies.add(new Movie(context.getString(R.string.furyTitle),
                 context.getString(R.string.furyOriginalTitle),
                 context.getString(R.string.furyDescription),
-                context.getDrawable(R.drawable.fury),
+                (R.drawable.fury),
                 Category.GUERRE,
                 context.getString(R.string.furyKeyword)));
 
         movies.add(new Movie(context.getString(R.string.granTorinoTitle),
                 context.getString(R.string.granTorinoOriginalTitle),
                 context.getString(R.string.granTorinoDescription),
-                context.getDrawable(R.drawable.gran_torino),
+                (R.drawable.gran_torino),
                 Category.DRAMATIQUE,
                 context.getString(R.string.granTorinoKeyWord)));
 
         movies.add(new Movie(context.getString(R.string.huitSalopardsTitle),
                 context.getString(R.string.huitSalopardsOrignalTitle),
                 context.getString(R.string.huitSalopardsDescription),
-                context.getDrawable(R.drawable.huit_salopards),
+                (R.drawable.huit_salopards),
                 Category.WESTERN,
                 context.getString(R.string.huitSalopardsKeyword)));
 
         movies.add(new Movie(context.getString(R.string.inceptionTitle),
                 context.getString(R.string.inceptionOrignalTitle),
                 context.getString(R.string.inceptionDescription),
-                context.getDrawable(R.drawable.inception),
+                (R.drawable.inception),
                 Category.SCIENCE_FICTION,
                 context.getString(R.string.inceptionKeyWord)));
 
         movies.add(new Movie(context.getString(R.string.interstellarTitle),
                 context.getString(R.string.interstellarOriginalTitle),
                 context.getString(R.string.interstellarDescription),
-                context.getDrawable(R.drawable.interstellar),
+                (R.drawable.interstellar),
                 Category.SCIENCE_FICTION,
                 context.getString(R.string.interstellarKeyWord)));
 
         movies.add(new Movie(context.getString(R.string.ipManTitle),
                 context.getString(R.string.ipManOriginalTitle),
                 context.getString(R.string.ipManDescription),
-                context.getDrawable(R.drawable.ip_man),
+                (R.drawable.ip_man),
                 Category.ACTION,
                 context.getString(R.string.ipManKeyWord)));
 
         movies.add(new Movie(context.getString(R.string.missionImpossibleTitle),
                 context.getString(R.string.missionImpossibleOriginalTitle),
                 context.getString(R.string.missionImpossibleDescription),
-                context.getDrawable(R.drawable.mission_impossible),
+                (R.drawable.mission_impossible),
                 Category.ESPIONNAGE,
                 context.getString(R.string.missionImpossibleKeyWord)));
 
         movies.add(new Movie(context.getString(R.string.pirateDesCaraibesTitle),
                 context.getString(R.string.pirateDesCaraibesOriginalTitle),
                 context.getString(R.string.pirateDesCaraibesDescription),
-                context.getDrawable(R.drawable.pirate_des_caraibes),
+                (R.drawable.pirate_des_caraibes),
                 Category.AVENTURE,
                 context.getString(R.string.pirateDesCaraibesKeyWord)));
 
         movies.add(new Movie(context.getString(R.string.yourNameTitle),
                 context.getString(R.string.yourNameOriginalTitle),
                 context.getString(R.string.yourNameDescription),
-                context.getDrawable(R.drawable.your_name),
+                (R.drawable.your_name),
                 Category.ANIMATION,
                 context.getString(R.string.yourNameKeyWord)));
 

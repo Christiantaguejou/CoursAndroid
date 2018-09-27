@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private ScrollView scrollBar;
     private RecyclerView recyclerView;
     private List<Comment> comments;
-    private Intent intent;
+    private Movie movie;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,22 +58,22 @@ public class MainActivity extends AppCompatActivity {
 
     protected void initActivity() {
         Intent intent = getIntent();
-        Movie movieReceived = MoviesManager.getInstance().getMovieById(intent.getIntExtra("movie",0));
+        movie = MoviesManager.getInstance().getMovieById(intent.getIntExtra("movie",0));
 
         ImageView moviePicture = findViewById(R.id.moviePicture);
-        moviePicture.setImageDrawable(getResources().getDrawable(movieReceived.getImage()));
+        moviePicture.setImageDrawable(getResources().getDrawable(movie.getImage()));
 
         TextView movieTitle = findViewById(R.id.movieTitle);
-        movieTitle.setText(movieReceived.getTitle());
+        movieTitle.setText(movie.getTitle());
 
         TextView originalTitle = findViewById(R.id.movieOriginalTitle);
-        originalTitle.setText(movieReceived.getOriginalTitle());
+        originalTitle.setText(movie.getOriginalTitle());
 
         TextView movieDescription = findViewById(R.id.movieDescription);
-        movieDescription.setText(movieReceived.getDescrpition());
+        movieDescription.setText(movie.getDescrpition());
 
         TextView movieKeyWords = findViewById(R.id.movieKeyWords);
-        movieKeyWords.setText(movieReceived.getKeyword());
+        movieKeyWords.setText(movie.getKeyword());
 
     }
 
@@ -111,14 +111,14 @@ public class MainActivity extends AppCompatActivity {
             MoviesManager.getInstance().setContext(this.getApplicationContext());
             MoviesManager.getInstance().setup();
             Uri imageUri = Uri.parse("android.resource://" + getPackageName()
-                            + "/drawable/" + MoviesManager.getInstance().getMovie(0).getImage());
+                            + "/drawable/" + movie.getImage());
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("image/*");
-            shareIntent.putExtra(Intent.EXTRA_TEXT, MoviesManager.getInstance().getMovie(0).getTitle());
+            shareIntent.putExtra(Intent.EXTRA_TEXT, movie.getTitle());
             shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
             shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             startActivity(Intent.createChooser(shareIntent, "Share to :"));
-            //Work with messages (Textra) but not with Messenger
+            //Work with messages (my app is Textra) but not with Messenger
         });
 
     }

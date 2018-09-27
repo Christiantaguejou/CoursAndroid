@@ -67,9 +67,6 @@ public class MovieViewHolder extends BaseViewHolder{
                 intent.putExtra("movie", movie.getId());
                 imageView.getContext().startActivity(intent);
             });
-            System.out.println("It Works");
-        } else {
-            System.out.println("relative layout is null (" + movie.getTitle() + ")");
         }
     }
 }

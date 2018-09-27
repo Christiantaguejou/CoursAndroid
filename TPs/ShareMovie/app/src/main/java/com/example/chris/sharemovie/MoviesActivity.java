@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.example.chris.sharemovie.adapters.MoviesAdapter;
@@ -24,6 +25,8 @@ public class MoviesActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ImageView categoriesListView;
+    private LinearLayout backBtn;
+    private ImageView iconClose;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +36,22 @@ public class MoviesActivity extends AppCompatActivity {
         categoriesListView = findViewById(R.id.category_list_btn);
         categoriesListView.setOnClickListener(onClickCategories);
 
+        this.backBtn = findViewById(R.id.iconBack);
+        backBtn.setOnClickListener(onClickBack);
+
+        iconClose = findViewById(R.id.iconClose);
+        iconClose.setOnClickListener(onClickBack);
+
         this.recyclerView = findViewById(R.id.movies_recycler_view);
         MoviesAdapter moviesAdapter = new MoviesAdapter();
         moviesAdapter.setItemsMovieLists(setMovies());
         this.recyclerView.setAdapter(moviesAdapter);
         this.recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
+
+    View.OnClickListener onClickBack = view -> {
+        MoviesActivity.this.finish();
+    };
 
     View.OnClickListener onClickCategories = view -> {
         Intent intent = new Intent(MoviesActivity.this, CategoriesActivity.class);

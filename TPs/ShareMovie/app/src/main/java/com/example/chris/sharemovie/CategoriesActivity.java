@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.chris.sharemovie.adapters.CategoriesAdapter;
@@ -17,6 +18,8 @@ public class CategoriesActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private LinearLayout backBtn;
+    private ImageView iconClose;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,10 @@ public class CategoriesActivity extends AppCompatActivity {
 
         this.backBtn = findViewById(R.id.iconBack);
         backBtn.setOnClickListener(onClickBack);
+
+        iconClose = findViewById(R.id.iconClose);
+        iconClose.setOnClickListener(onClickBack);
+
         this.recyclerView = findViewById(R.id.category_recycler_view);
         CategoriesAdapter categoriesAdapter = new CategoriesAdapter();
         categoriesAdapter.setCategories(setCategories());
@@ -33,7 +40,7 @@ public class CategoriesActivity extends AppCompatActivity {
     }
 
     View.OnClickListener onClickBack = view -> {
-        finish();
+        CategoriesActivity.this.finish();
     };
 
     public List<Category> setCategories(){

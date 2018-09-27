@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         iconSend.setOnClickListener(onClickSend);
 
         iconClose = findViewById(R.id.iconClose);
-        iconClose.setOnClickListener(onClickListeMovie);
+        iconClose.setOnClickListener(onClickClose);
 
         iconBack = findViewById(R.id.iconBack);
         iconBack.setOnClickListener(onClickClose);
@@ -101,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
         //header
         backTitle = findViewById(R.id.backTitle);
+        backTitle.setOnClickListener(onClickClose);
 
         //comments
         commentsList = findViewById(R.id.commentList);
@@ -198,22 +199,12 @@ public class MainActivity extends AppCompatActivity {
         this.recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    View.OnClickListener onClickClose = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-//            MainActivity.this.finish();
-            Intent intent = new Intent(MainActivity.this, CategoriesActivity.class);
-            startActivity(intent);
-        }
-    };
+    View.OnClickListener onClickClose = view -> MainActivity.this.finish();
 
-    View.OnClickListener onClickListeMovie = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
+    View.OnClickListener onClickListeMovie = view -> {
 //            MainActivity.this.finish();
-            Intent intent = new Intent(MainActivity.this, MoviesActivity.class);
-            startActivity(intent);
-        }
+        Intent intent = new Intent(MainActivity.this, MoviesActivity.class);
+        startActivity(intent);
     };
 
 

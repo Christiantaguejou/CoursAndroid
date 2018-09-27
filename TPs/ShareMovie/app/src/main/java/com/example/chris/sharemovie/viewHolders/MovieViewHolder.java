@@ -20,15 +20,16 @@ public class MovieViewHolder extends BaseViewHolder{
     private ImageView imageView;
     private TextView titleTextView;
     private TextView descriptionTextView;
+    private RelativeLayout relativeLayout;
     private Context ctx;
     private int movieId;
-    private RelativeLayout relativeLayout;
 
     public MovieViewHolder(@NonNull View itemView) {
         super(itemView);
         this.imageView = itemView.findViewById(R.id.movie_image);
         this.titleTextView = itemView.findViewById(R.id.list_movie_title);
         this.descriptionTextView = itemView.findViewById(R.id.list_movie_description);
+        this.relativeLayout = itemView.findViewById(R.id.global_cell);
 
     }
 
@@ -60,17 +61,15 @@ public class MovieViewHolder extends BaseViewHolder{
                 descriptionTextView.setText(movie.getDescrpition());
             }
         }
-        if(descriptionTextView != null) {
-            RelativeLayout rel = descriptionTextView.findViewById(R.id.movieSelected);
-            if(rel != null) {
-                rel.setOnClickListener(v -> {
-                    Intent intent = new Intent(imageView.getContext(), MainActivity.class);
-                    intent.putExtra("movie", movie.getId());
-                    imageView.getContext().startActivity(intent);
-                });
-                System.out.println("It Works 2");
-            }
+        if(relativeLayout != null) {
+            relativeLayout.setOnClickListener(v -> {
+                Intent intent = new Intent(imageView.getContext(), MainActivity.class);
+                intent.putExtra("movie", movie.getId());
+                imageView.getContext().startActivity(intent);
+            });
             System.out.println("It Works");
+        } else {
+            System.out.println("relative layout is null (" + movie.getTitle() + ")");
         }
     }
 }
